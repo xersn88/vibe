@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Monster Café | 咖啡馆主页</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <h1 class="logo">Monster Café</h1>
+    <nav class="nav">
+      <button class="nav-button" type="button" data-return-title>返回标题</button>
+      <a href="collection.html">怪兽图鉴<span class="nav-bubble" data-collection-nav-bubble hidden>!</span></a>
+      <a href="achievements.html">成就图鉴<span class="nav-bubble" data-achievement-nav-bubble hidden>!</span></a>
+      <a href="level-rewards.html">等级奖励<span class="nav-bubble" data-level-reward-nav-bubble hidden>!</span></a>
+      <a href="backpack.html">查看背包</a>
+      <a href="shop.html">原料商店</a>
+      <a href="logs.html">开发日志</a>
+    </nav>
+  </header>
+
+  <main class="page home-page">
+    <section class="home-dashboard">
+      <section class="panel home-actions-panel">
+        <h2>咖啡馆柜台</h2>
+        <p class="lead">今天也准备好迎接小怪兽了吗？</p>
+        <div class="start-menu">
+          <button class="button" type="button" data-home-new-day>开始新的一天</button>
+          <button class="button" type="button" data-home-resume-day>读取工作进度</button>
+          <a class="button" href="shop.html">前往原料商店</a>
+        </div>
+      </section>
+
+      <section class="panel player-summary-card">
+        <h2 data-home-player-name>玩家昵称</h2>
+        <p>你已经营业了 <strong data-business-days>0</strong> 天</p>
+        <p>当前等级：Lv.<strong data-shop-level>1</strong></p>
+        <div class="progress-group">
+          <div class="progress-head">
+            <span>经验</span>
+            <span><span data-player-xp>0</span>/<span data-next-level-xp>120</span></span>
+          </div>
+          <div class="progress-track"><div class="progress-fill" data-xp-progress></div></div>
+        </div>
+        <div class="progress-group">
+          <div class="progress-head">
+            <span>成就收集</span>
+            <span><span data-achievement-done>0</span>/<span data-achievement-total>0</span></span>
+          </div>
+          <div class="progress-track"><div class="progress-fill achievement-fill" data-achievement-progress></div></div>
+        </div>
+      </section>
+    </section>
+  </main>
+
+  <div class="modal-backdrop" data-return-title-modal hidden>
+    <section class="day-modal pause-modal" role="dialog" aria-modal="true">
+      <h2>返回标题页面？</h2>
+      <p class="lead">确认后会退出当前存档登录状态，回到 Monster Café 初始界面。</p>
+      <label class="checkbox-row">
+        <input type="checkbox" data-skip-return-title-confirm>
+        <span>本次登录不再提醒</span>
+      </label>
+      <div class="modal-actions">
+        <button class="button danger-button" type="button" data-confirm-return-title>确认返回</button>
+        <button class="button" type="button" data-cancel-return-title>取消</button>
+      </div>
+    </section>
+  </div>
+
+  <div class="modal-backdrop" data-tutorial-modal hidden>
+    <section class="day-modal pause-modal" role="dialog" aria-modal="true">
+      <h2>是否进入新手教程？</h2>
+      <p class="lead">完成或跳过教程都会获得初始资金 500 金币，以及每种已解锁原料 2 份。</p>
+      <div class="modal-actions">
+        <button class="button" type="button" data-enter-tutorial>进入，我是新手</button>
+        <button class="button" type="button" data-skip-tutorial>跳过，我有经验</button>
+      </div>
+    </section>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>

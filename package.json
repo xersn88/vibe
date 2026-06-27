@@ -1,0 +1,23 @@
+{
+  "name": "monster-cafe",
+  "version": "1.0.0",
+  "description": "Monster Café 怪兽咖啡馆经营小游戏。",
+  "main": "backend/server.js",
+  "scripts": {
+    "start": "node backend/server.js",
+    "dev": "node backend/server.js"
+  },
+  "keywords": [
+    "monster-cafe",
+    "express",
+    "sqlite",
+    "game"
+  ],
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.19.2",
+    "sqlite3": "^5.1.7"
+  }
+}

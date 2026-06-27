@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Monster Café | 原料商店</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="site-header" data-main-header>
+    <h1 class="logo">Monster Café</h1>
+    <nav class="nav">
+      <a href="index.html">主页</a>
+      <a href="collection.html">怪兽图鉴<span class="nav-bubble" data-collection-nav-bubble hidden>!</span></a>
+      <a href="achievements.html">成就图鉴<span class="nav-bubble" data-achievement-nav-bubble hidden>!</span></a>
+      <a href="level-rewards.html">等级奖励<span class="nav-bubble" data-level-reward-nav-bubble hidden>!</span></a>
+      <a href="backpack.html">查看背包</a>
+      <a href="shop.html">原料商店</a>
+      <a href="logs.html">开发日志</a>
+    </nav>
+  </header>
+
+  <main class="page shop-page">
+    <section class="restock-banner" data-restock-banner hidden>
+      <div>
+        <h2>补货暂停中</h2>
+        <p class="lead">营业时间已经暂停，买好原料后可以继续接待顾客。</p>
+      </div>
+      <button class="button" type="button" data-finish-restock-button>补货完成继续营业</button>
+    </section>
+
+    <section class="shop-header">
+      <div>
+        <h2>原料商店</h2>
+        <p class="lead">采购饮品原料，或花金币解锁新的奇妙风味。</p>
+      </div>
+      <div class="status-item">金币：<span data-player-coins>0</span></div>
+    </section>
+
+    <section data-shop-message class="shop-message" aria-live="polite"></section>
+    <section data-shop class="shop-grid" aria-label="原料商店列表">
+      <p class="empty-note">正在整理货架。</p>
+    </section>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>

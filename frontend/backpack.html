@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Monster Café | 背包</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <h1 class="logo">Monster Café</h1>
+    <nav class="nav">
+      <a href="index.html">主页</a>
+      <a href="collection.html">怪兽图鉴<span class="nav-bubble" data-collection-nav-bubble hidden>!</span></a>
+      <a href="achievements.html">成就图鉴<span class="nav-bubble" data-achievement-nav-bubble hidden>!</span></a>
+      <a href="level-rewards.html">等级奖励<span class="nav-bubble" data-level-reward-nav-bubble hidden>!</span></a>
+      <a href="backpack.html">查看背包</a>
+      <a href="shop.html">原料商店</a>
+      <a href="logs.html">开发日志</a>
+    </nav>
+  </header>
+
+  <main class="page backpack-page">
+    <section class="collection-header">
+      <h2>背包</h2>
+      <p class="lead">这里会显示当前存档获得的所有物品。</p>
+    </section>
+    <section class="backpack-layout">
+      <div data-backpack-list class="backpack-grid">
+        <p class="empty-note">正在整理背包。</p>
+      </div>
+      <aside data-backpack-detail class="panel backpack-detail">
+        <h2>物品详情</h2>
+        <p class="empty-note">点击左侧物品查看详情。</p>
+      </aside>
+    </section>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>

@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Monster Café | 主游戏</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="site-header" data-main-header>
+    <h1 class="logo">Monster Café</h1>
+    <nav class="nav">
+      <a href="index.html">主页</a>
+      <a href="collection.html">怪兽图鉴<span class="nav-bubble" data-collection-nav-bubble hidden>!</span></a>
+      <a href="achievements.html">成就图鉴<span class="nav-bubble" data-achievement-nav-bubble hidden>!</span></a>
+      <a href="level-rewards.html">等级奖励<span class="nav-bubble" data-level-reward-nav-bubble hidden>!</span></a>
+      <a href="backpack.html">查看背包</a>
+      <a href="shop.html">原料商店</a>
+      <a href="logs.html">开发日志</a>
+    </nav>
+  </header>
+
+  <main class="page game-page">
+    <section class="status-bar game-status">
+      <div class="status-item">金币：<span data-player-coins>0</span></div>
+      <div class="status-item">第 <span data-current-day>1</span> 天</div>
+      <div class="status-item">店铺等级：<span data-shop-level>1</span></div>
+      <div class="status-item">经验：<span data-player-xp>0</span></div>
+      <div class="status-item">剩余时间：<span data-day-timer>90</span> 秒</div>
+      <div class="status-item">今日顾客：<span data-served-count>0</span>/<span data-target-count>3</span></div>
+      <button class="button pause-button" type="button" data-pause-button>暂停</button>
+    </section>
+
+    <section class="cafe-counter game-main-grid">
+      <section class="panel customer-panel">
+        <div class="panel-title-row">
+          <h2>怪兽顾客</h2>
+        </div>
+        <div data-current-customer class="customer-display">
+          <p class="empty-note">正在等待小怪兽顾客进店。</p>
+        </div>
+      </section>
+
+      <section class="panel order-panel-main">
+        <h2>订单需求</h2>
+        <div data-current-order class="order-request">
+          <p class="empty-note">顾客到达后会在这里提出需求。</p>
+        </div>
+        <div class="customer-wait-box" data-wait-box hidden>
+          <div class="wait-row">
+            <strong>顾客等待</strong>
+            <span><span data-customer-wait-time>20</span> 秒</span>
+          </div>
+          <div class="wait-track">
+            <div class="wait-fill" data-customer-wait-fill></div>
+          </div>
+          <p class="empty-note" data-customer-wait-note>心情稳定，正在期待饮品。</p>
+        </div>
+
+        <div class="mixing-bowl">
+          <h3>当前饮品</h3>
+          <div data-current-drink class="current-drink">
+            <p class="empty-note">点击右侧原料加入饮品。</p>
+          </div>
+          <button class="button make-button" type="button" data-make-drink-button>制作饮品</button>
+        </div>
+
+        <div data-drink-result class="order-panel"></div>
+      </section>
+
+      <section class="review-wall panel">
+        <div class="panel-title-row">
+          <h2>顾客评价墙</h2>
+          <span class="tag">便签纸</span>
+        </div>
+        <div data-review-wall class="sticky-wall">
+          <div class="pin"></div>
+          <article class="sticky-note empty-sticky">
+            <strong>今日还没有评价</strong>
+            <p>完成第一杯饮品后，顾客评价会贴在这里。</p>
+          </article>
+        </div>
+      </section>
+    </section>
+
+    <section class="panel ingredients-panel ingredients-bottom-panel">
+      <h2>可选原料</h2>
+      <div data-ingredients class="ingredient-button-grid"></div>
+    </section>
+  </main>
+
+  <div class="countdown-overlay" data-countdown-overlay hidden>
+    <span data-countdown-text>3</span>
+  </div>
+
+  <div class="modal-backdrop" data-day-modal hidden>
+    <section class="day-modal" role="dialog" aria-modal="true" aria-labelledby="day-modal-title">
+      <h2 id="day-modal-title">今日结算</h2>
+      <div data-day-summary></div>
+      <div class="modal-actions">
+        <button class="button" type="button" data-next-day-button>进入下一天</button>
+        <a class="button" href="shop.html">进入商店</a>
+        <a class="button" href="index.html">返回首页</a>
+      </div>
+    </section>
+  </div>
+
+  <div class="modal-backdrop" data-pause-modal hidden>
+    <section class="day-modal pause-modal" role="dialog" aria-modal="true" aria-labelledby="pause-modal-title">
+      <h2 id="pause-modal-title">营业暂停</h2>
+      <p class="lead">计时已经暂停，小怪兽会乖乖等在柜台前。</p>
+      <div class="modal-actions">
+        <button class="button" type="button" data-resume-button>继续营业</button>
+        <button class="button" type="button" data-restock-button>前往商店补货</button>
+        <button class="button danger-button" type="button" data-exit-day-button>退出本天</button>
+      </div>
+    </section>
+  </div>
+
+  <div class="modal-backdrop" data-exit-modal hidden>
+    <section class="day-modal pause-modal" role="dialog" aria-modal="true" aria-labelledby="exit-modal-title">
+      <h2 id="exit-modal-title">确认退出本天？</h2>
+      <p class="lead">保存本次进度会记录当前营业表现并进入结算；不保存会直接回到首页，本天临时统计不会保存。</p>
+      <div class="modal-actions">
+        <button class="button" type="button" data-save-exit-button>保存进度并退出</button>
+        <button class="button danger-button" type="button" data-discard-exit-button>不保存退出</button>
+        <button class="button" type="button" data-cancel-exit-button>继续暂停</button>
+      </div>
+    </section>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>

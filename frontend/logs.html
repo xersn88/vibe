@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Monster Café | 智能协作开发日志</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <h1 class="logo">Monster Café</h1>
+    <nav class="nav">
+      <a href="index.html">主页</a>
+      <a href="collection.html">怪兽图鉴<span class="nav-bubble" data-collection-nav-bubble hidden>!</span></a>
+      <a href="achievements.html">成就图鉴<span class="nav-bubble" data-achievement-nav-bubble hidden>!</span></a>
+      <a href="level-rewards.html">等级奖励<span class="nav-bubble" data-level-reward-nav-bubble hidden>!</span></a>
+      <a href="backpack.html">查看背包</a>
+      <a href="shop.html">原料商店</a>
+      <a href="logs.html">开发日志</a>
+    </nav>
+  </header>
+
+  <main class="page">
+    <section class="panel">
+      <h2>智能协作开发日志</h2>
+      <p class="lead">用于记录我使用 Codex 辅助开发 Monster Café 的过程。</p>
+      <form class="log-form" data-log-form>
+        <label>
+          <span>提示词</span>
+          <textarea data-log-prompt maxlength="1000" required placeholder="记录这次给 Codex 的开发要求"></textarea>
+        </label>
+        <label>
+          <span>AI 返回摘要</span>
+          <textarea data-log-ai-summary maxlength="1000" required placeholder="概括 Codex 给出的方案或实现内容"></textarea>
+        </label>
+        <label>
+          <span>人工修改</span>
+          <textarea data-log-manual-change maxlength="1000" required placeholder="记录你手动调整、确认或要求修改的内容"></textarea>
+        </label>
+        <label>
+          <span>运行结果</span>
+          <textarea data-log-run-result maxlength="1000" required placeholder="记录测试结果、截图问题或最终运行状态"></textarea>
+        </label>
+        <div class="modal-actions">
+          <button class="button" type="submit">新增日志</button>
+        </div>
+        <div class="shop-message" data-log-message></div>
+      </form>
+    </section>
+
+    <section class="panel">
+      <h2>日志列表</h2>
+      <div data-logs class="grid"></div>
+    </section>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>

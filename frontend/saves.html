@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Monster Café | 存档页面</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <h1 class="logo">Monster Café</h1>
+    <nav class="nav">
+      <a href="start.html">初始界面</a>
+    </nav>
+  </header>
+
+  <main class="page save-page">
+    <section class="collection-header">
+      <h2>存档页面</h2>
+      <p class="lead">单击存档块读取存档；将鼠标移到存档上，可以删除对应存档。</p>
+    </section>
+
+    <section data-save-list class="save-list">
+      <p class="empty-note">正在读取存档。</p>
+    </section>
+  </main>
+
+  <div class="modal-backdrop" data-new-save-modal hidden>
+    <section class="day-modal pause-modal" role="dialog" aria-modal="true">
+      <h2>新建存档</h2>
+      <p class="lead">请输入你的昵称，也可以点击骰子随机生成。</p>
+      <label class="nickname-row">
+        <span>昵称</span>
+        <input type="text" data-new-save-name maxlength="16" placeholder="请输入昵称">
+        <button class="button icon-button" type="button" data-random-name aria-label="随机昵称">⚄</button>
+      </label>
+      <div class="modal-actions">
+        <button class="button" type="button" data-confirm-new-save>确认并进入</button>
+        <button class="button" type="button" data-cancel-new-save>取消</button>
+      </div>
+    </section>
+  </div>
+
+  <div class="modal-backdrop" data-delete-save-modal hidden>
+    <section class="day-modal pause-modal" role="dialog" aria-modal="true">
+      <h2>确认删除该存档？</h2>
+      <p class="lead">删除后无法从页面中恢复。</p>
+      <label class="checkbox-row">
+        <input type="checkbox" data-skip-delete-confirm>
+        <span>本次登录不再提醒</span>
+      </label>
+      <div class="modal-actions">
+        <button class="button danger-button" type="button" data-confirm-delete-save>是，删除</button>
+        <button class="button" type="button" data-cancel-delete-save>否</button>
+      </div>
+    </section>
+  </div>
+
+  <div class="modal-backdrop" data-tutorial-modal hidden>
+    <section class="day-modal pause-modal" role="dialog" aria-modal="true">
+      <h2>是否进入新手教程？</h2>
+      <p class="lead">完成或跳过教程都会获得初始资金 500 金币，以及每种已解锁原料 2 份。</p>
+      <div class="modal-actions">
+        <button class="button" type="button" data-enter-tutorial>进入，我是新手</button>
+        <button class="button" type="button" data-skip-tutorial>跳过，我有经验</button>
+      </div>
+    </section>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
